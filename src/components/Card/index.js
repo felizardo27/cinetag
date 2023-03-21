@@ -2,6 +2,7 @@ import { useFavoritesContext } from 'context/Favorites'
 import styles from './Card.module.css'
 import favoriteIcon from './favorite.png'
 import unFavoriteIcon from './unfavorite.png'
+import { Link } from 'react-router-dom'
 
 const Card = ({ id, title, cover }) => {
 
@@ -13,12 +14,17 @@ const Card = ({ id, title, cover }) => {
 
   return (
     <div className={styles.container}>
-      <img 
-        src={cover} 
-        alt='Card cover'
-        className={styles.cover}
-      />
-      <h2>{title}</h2>
+      <Link 
+        className={styles.link} 
+        to={`/${id}`}
+      >
+        <img 
+          src={cover} 
+          alt='Card cover'
+          className={styles.cover}
+        />
+        <h2>{title}</h2>
+      </Link>
       <img 
         src={icon} 
         alt='Favorite Icon'
