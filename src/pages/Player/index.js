@@ -3,7 +3,6 @@ import styles from './Player.module.css'
 import Title from 'components/Title'
 import { useParams } from 'react-router-dom'
 import videos from 'json/db.json'
-import Card from 'components/Card'
 import NotFound from 'pages/NotFound'
 
 const Player = () => {
@@ -23,8 +22,8 @@ const Player = () => {
                 </h1>
                 <section className={styles.container}>
                     <iframe 
-                        width="560" 
-                        height="315" 
+                        width="100%" 
+                        height="100%" 
                         src={video.link} 
                         title={video.title}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
